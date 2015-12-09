@@ -50,6 +50,10 @@
     return self.getContestQArray.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 121;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellId = @"Cell";
     ContestQATableViewCell *cell =(ContestQATableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellId];
@@ -72,7 +76,8 @@
 #pragma mark -
 
 - (void)didTapButtonAtIndexpath:(NSIndexPath *)indexPath posision:(NSInteger)position {
-    //Your code here
+    //You can get index postion and do anything here
+    NSLog(@"%ld %ld", (long)indexPath.row, (long)position);
 }
 
 @end
